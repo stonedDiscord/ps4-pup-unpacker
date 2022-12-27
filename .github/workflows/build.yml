@@ -138,8 +138,7 @@ jobs:
             -S . \
             -B ./build/ \
             -DCMAKE_BUILD_TYPE=${{ matrix.config.build_type }} \
-            -G "${{ matrix.config.generators }}" \
-            -DCMAKE_INSTALL_PREFIX:PATH=instdir
+            -G "${{ matrix.config.generators }}"
 
       - name: Build
         shell: bash
@@ -147,10 +146,10 @@ jobs:
 
       - name: Pack
         shell: bash
-        working-directory: instdir
+        working-directory: build
         run: |
           ls -laR
-          ${{ matrix.config.archiver }} ../${{ matrix.config.artifact }} ./build/
+          ${{ matrix.config.archiver }} ../${{ matrix.config.artifact }} .
 
       - name: Upload
         uses: actions/upload-artifact@v1
