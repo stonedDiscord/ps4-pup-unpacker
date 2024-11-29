@@ -119,7 +119,9 @@ jobs:
             cxx: clang++
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+        with:
+          submodules: recursive
 
       - name: print environment
         run: |
