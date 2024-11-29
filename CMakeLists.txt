@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(ps4-pup_unpacker CXX)
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/extern/zlib-1.2.8)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/extern/zlib)
 
 set(SOURCE
 	main.cpp
