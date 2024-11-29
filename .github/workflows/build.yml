@@ -15,7 +15,6 @@ jobs:
             build_type: Release
             packages: ninja-build
             generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: gcc
             cxx: g++
 
@@ -24,7 +23,6 @@ jobs:
             build_type: Release
             packages: ninja-build libc++-13-dev libc++abi-13-dev
             generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: clang-13
             cxx: clang++-13
 
@@ -33,7 +31,6 @@ jobs:
             build_type: Release
             packages: ninja-build libc++-15-dev libc++abi-15-dev
             generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: clang-15
             cxx: clang++-15
 
@@ -42,7 +39,6 @@ jobs:
             build_type: Release
             packages: ninja-build
             generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: gcc
             cxx: g++
 
@@ -51,7 +47,6 @@ jobs:
             build_type: Release
             packages: ninja-build
             generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: clang-10
             cxx: clang++-10
 
@@ -60,7 +55,6 @@ jobs:
             build_type: Release
             packages: ninja-build clang-11 libc++-11-dev libc++abi-11-dev
             generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: clang-11
             cxx: clang++-11
 
@@ -69,7 +63,6 @@ jobs:
             build_type: Release
             packages: ninja
             generator: "Visual Studio 16 2019"
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: cl
             cxx: cl
 
@@ -78,16 +71,14 @@ jobs:
             build_type: Release
             packages: ninja
             generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: clang
             cxx: clang++
 
-          - name: "macOS 12 AppleClang"
+          - name: "macOS 14 AppleClang"
             os: macos-12
             build_type: Release
             packages: ninja
             generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17"
             cc: clang
             cxx: clang++
 
@@ -146,7 +137,7 @@ jobs:
           cmake --build build --config ${{ matrix.config.build_type }}
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@master
         with:
           name: ${{ matrix.config.name }}
           path: |
