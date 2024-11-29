@@ -1,3 +1,7 @@
 [submodule "extern/zstr"]
 	path = extern/zstr
 	url = https://github.com/mateidavid/zstr.git
+
+[submodule "extern/zlib"]
+	path = extern/zlib
+	url = https://github.com/madler/zlib
