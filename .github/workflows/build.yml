@@ -37,15 +37,6 @@ jobs:
             cc: clang-15
             cxx: clang++-15
 
-          - name: "Ubuntu 22.04 GCC 11 coverage"
-            os: ubuntu-22.04
-            build_type: Debug
-            packages: ninja-build lcov
-            generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
-            cc: gcc
-            cxx: g++
-
           - name: "Ubuntu 20.04 GCC 9.3"
             os: ubuntu-20.04
             build_type: Release
@@ -72,15 +63,6 @@ jobs:
             compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
             cc: clang-11
             cxx: clang++-11
-
-          - name: "Ubuntu 20.04 GCC 9.3 coverage"
-            os: ubuntu-20.04
-            build_type: Debug
-            packages: ninja-build lcov
-            generator: Ninja
-            compatibility: "cxx_std_11;cxx_std_17;cxx_std_20"
-            cc: gcc
-            cxx: g++
 
           - name: "Windows MSVC 2019"
             os: windows-2019
