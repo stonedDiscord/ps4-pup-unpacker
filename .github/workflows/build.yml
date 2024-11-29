@@ -114,11 +114,12 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Git Submodule Update
+      - name: Git Submodules
         run: |
           mkdir extern
-          git pull --recurse-submodules
-          git submodule update --remote --recursive
+          cd extern
+          git clone https://github.com/mateidavid/zstr.git
+          git clone https://github.com/madler/zlib
 
       - name: print environment
         run: |
