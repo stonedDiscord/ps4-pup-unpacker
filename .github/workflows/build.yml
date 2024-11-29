@@ -123,6 +123,12 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Git Submodule Update
+        run: |
+          mkdir extern
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+
       - name: print environment
         run: |
           echo github.event.action: ${{ github.event.action }}
